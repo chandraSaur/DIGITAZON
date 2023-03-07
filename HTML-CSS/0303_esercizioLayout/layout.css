@@ -1,0 +1,34 @@
+/* Articoli con titolo, testo, immagine ed autore in stile card.  */
+/* Da fare: sistemare stile carte e solo dopo ampliare, nello stesso contenitore i link e il resto del layout */
+
+#box{
+    background-color: antiquewhite;
+    border: 0.5rem solid black;
+    padding: 2rem;
+}
+
+.card {
+    background-color: bisque;
+    float:left;
+     width: 300px;
+    height: 400px;
+}
+
+.cardRight{
+    float: right;
+}
+
+.cardLeft{
+      margin-right: 1rem;  
+}
+
+.clearRow{
+    clear: both;
+}
+
+.card span h3 {
+    background-color: aqua;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}

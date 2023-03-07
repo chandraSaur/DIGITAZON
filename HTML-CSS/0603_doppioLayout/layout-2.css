@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* utilizzato dopo i div per riuscire a dividere efficacemente le sezioni in modo tale che non si spalmi tutto */
+.clearFix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+
+/* sezione sinistra del calendario */
+
+.left-section {
+    /* background-color: aqua; */
+    float: left;
+    width: 60%;
+    height: 900px;
+    border-right:1px solid black;
+    padding: 1rem;
+}
+
+#febbraio {
+    margin-top: 2rem;
+    border-top: 1px solid black;
+}
+
+#febbraio a{
+    color: black;
+}
+
+/* logo brand Digitazon */
+.left-section img:first-child{
+    width: 170px;
+    padding: 1rem;
+    display: inline-block;
+}
+
+/* icona menu hamburger */
+.left-section img:nth-child(2){
+    width: 2rem;
+    float:right;
+    margin: 1rem 2rem
+}
+
+.left-section div{
+    /* margin-top: 4rem;
+    margin-bottom: 0.4rem;  */
+    padding: 1rem;
+}
+
+.left-section::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+/* sezione destra con gallery, ancore e contatti */
+
+.right-section {
+    /* background-color: lightgreen; */
+    float: right;
+    width: 40%;
+    padding: 1rem;
+}
+
+.right-section div img {
+    float: left;
+    width: 5rem;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+.right-section h3{
+    border-top: 1px solid black;
+    padding-top: 2rem;
+}
+
+.right-section ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+

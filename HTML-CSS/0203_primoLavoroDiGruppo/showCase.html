@@ -1,0 +1,131 @@
+<!-- Scrivere per ogni tag visto sino ad ora il suo utilizzo e fornire un esempio dato dalla nostra esperienza -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossario</title>
+</head>
+<body>
+    <h1>Glossario HTML & CSS</h1>
+        <h2>HTML</h2>
+        <hr>
+    <div>
+        <h3>H1-H6</h3>
+        <hr>
+        <span>Permette di scrivere titoli di varie dimensioni (dalla più grande alla più piccola). Ad esclusione di H1, tutti gli altri possono essere utilizzati più volte nella stessa pagina.</span>
+        <h4>Esempio</h4>
+        <pre>
+            <code>
+                &lth1&gtTesto 1&lt/h1&gt
+                &lth2&gtTesto 2&lt/h1&gt
+                &lth3&gtTesto 3&lt/h1&gt
+                &lth4&gtTesto 4&lt/h1&gt
+                &lth5&gtTesto 5&lt/h1&gt
+                &lth6&gtTesto 6&lt/h1&gt
+                    <h1>Testo1</h1>
+                    <h2>Testo2</h2>
+                    <h3>Testo3</h3>
+                    <h4>Testo4</h4>
+                    <h5>Testo5</h5>
+                    <h6>Testo6</h6>                 
+            </code>
+        </pre> 
+    </div>
+    <div>
+        <h3>Tag di formattazione parte1</h3>
+        <hr>
+        <span>Permettono di formattare il testo. Hanno un corrispettivo semanticamente più forte.</span>
+        <h4>Esempio</h4>
+        <pre>
+            <code>
+                &ltb&gtTesto grassetto&lt/b&gt
+                &lti&gtTesto corsivo&lt/i&gt
+                &ltu&gtTesto sottolineato&lt/u&gt
+                &ltdel&gtTesto cancellato&lt/del&gt
+                &ltsup&gtApice&lt/sup&gt
+                &ltsub&gtPedice&lt/sub&gt
+                <p>
+                    <b>Testo grassetto</b> <i>Testo corsivo</i> <u>Testo sottolineato</u> <del>Testo cancellato</del> <span>x<sup>2</sup> H<sub>2</sub>O</span>
+
+                </p>
+            </code>
+        </pre>
+    </div>
+
+    <div>
+        <h3>Div</h3>
+        <hr>
+        <span>E' un generico contenitore e di tipo <i>block-level element</i>. <br> Ciò significa che ha dimensioni impostabili, larghezza che varia in base al contenitore e altezza generata dal contenuto.</span>
+        <h4>Esempio</h4>
+        <pre>
+            <code>
+                &ltdiv&gt
+                    &ltmain&gt
+                        &ltarticle&gt
+                            &lth4&gtLorem&lt/h4&gt
+                            &ltp&gtLorem ipsum dolor sit amet consectetur adipisicing elit.&lt/p&gt   
+                        &lt/article&gt   
+                    &lt/main&gt
+                    &ltbutton&gtCliccami&lt/button&gt
+                &lt/div&gt    
+            </code>
+        </pre>
+    </div>
+    <div>
+        <h3>Span</h3>
+        <hr>
+        <span>E' un generico contenitore e di tipo <i>inline element</i>. <br> Ciò significa che ha dimensioni non impostabili se non con CSS, larghezza che varia in base al contenuto e altezza generata dal contenuto.</span>
+        <h4>Esempio</h4>
+        <pre>
+            <code>
+                &ltspan&gtLorem ipsum dolor sit amet consectetur adipisicing elit.&lt/span&gt    
+            </code>
+        </pre>
+    </div>
+    <div>
+        <h3>Link</h3>
+        <hr>
+        <span>Permette di collegare un file CSS all'html. </span>
+        <h4>Esempio</h4>
+        <pre>
+            <code>
+                &ltlink rel="stylesheet" href="file.css"&gt    
+            </code>
+        </pre>
+    </div>
+    <div>
+        <h3>Style</h3>
+        <hr>
+        <span>Permette di scrivere in HTML il codice CSS. Non è utilizzato poichè preferibile l'SoC (Separation of contents) </span>
+        <h4>Esempio</h4>
+        <pre>
+            <code>
+                &ltstyle&gt    
+                &lt/style&gt  
+            </code>
+        </pre>
+    </div>
+
+
+    <h2>CSS</h2>
+    <hr>
+    <div>
+        <h3>Widht e Heigth</h3>
+        <hr>
+        <span>Valori rispettivamente della larghezza e dell'altezza dell'elemento (nel caso di testo del contenitore in cui è inserito). In caso di inserimento del padding, questo non viene aggiunto alle width e heigth specificate: il browser aggiungerà automaticamente altre W ed H a quelle presenti.</span>
+        <h4>Esempio</h4>
+        <div>
+            div img { <br>
+                width: 100px; <br>
+                height: 200px; <br>
+            }
+        </div>
+    </div>
+
+
+</body>
+</html>

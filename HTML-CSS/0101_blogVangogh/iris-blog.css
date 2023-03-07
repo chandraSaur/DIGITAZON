@@ -1,0 +1,52 @@
+
+body {
+    background-color: #CDEEAA;
+}
+
+header {
+    text-align: center; 
+}
+
+header div:first-child {
+    height: 300px;
+    background-image: url(Images/Iris.jpeg);
+    background-position: center;
+    background-size: contain;
+    
+}
+
+header div span h1 {
+    /* background-color: #382208; */
+    display: inline;
+    float: left;
+    margin-left: 25rem;
+    margin-top: 12.8rem;
+    color: #ffffff;
+    font-size: 60px;
+    font-style: oblique;
+}
+
+.clearRow {
+    clear: both;
+}
+
+header div ul li {
+    list-style-type: none;
+    display:inline-block;
+    background-color: #96dae4;
+    border-radius: 10%; 
+}
+
+header div ul li span :hover{
+    background-color: #6D70C6;
+    color: #ffffff;
+     
+ }
+header div ul li span a {
+   text-decoration: none;
+   color: #382208;
+   background-color: #96DAE4;
+   display: block;
+   padding: 1rem;
+   border-radius: 10%;
+}
