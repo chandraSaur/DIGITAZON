@@ -1,0 +1,44 @@
+ /* prima consegna */
+ /* Bene utilizzare la virgola per snellire il codice quando possibile */
+ a, a:visited {
+    color: black;
+    text-decoration: none;
+  }
+  
+  a[href="/the-one-ring"] {
+    color: gold; 
+  }
+  
+  a[href="/melange"]{
+    color: red;
+  }
+  
+  /* seconda consegna */
+  span:first-child::after {
+    content: "\00AB";
+  } 
+  
+  .movies-quotes span:nth-child(even)::after {
+    content: "\00BB";
+  }
+  
+  span {
+    font-style:oblique;
+  }
+  
+  span:first-child {
+    font-weight:bold; 
+    font-style:normal; 
+  }
+
+  /* terza consegna */
+  
+  [type="checkbox"]:checked + span:after{
+    content:"❤";
+  }
+  
+  /* quarta consegna */
+  /* Sarebbe stato meglio utilizzare il visibility:hidden */
+  button:hover{
+    opacity: 0;
+  }
