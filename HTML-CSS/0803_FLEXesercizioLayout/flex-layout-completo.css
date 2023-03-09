@@ -1,0 +1,60 @@
+main {
+    display: flex;
+}
+
+main > div:first-child {
+    flex-grow: 6;
+    border-right: 1px solid gray;
+    padding-right: 2rem;
+    margin-right: 2rem;
+}
+/* flex-grow permette di sistemare i due più piccoli contenitori che si trovano l'uno accanto all'altro in modo tale che uno prenda i 6/9 e l'altro i 3/9 rimanenti (6+3=9); il border right crea la riga tra le due aree mentre padding e margin aiutano a distanziare gli elementi interni dal perimetro. Il > tra main e div aiuta a indicare il div direttamente figlio di main e non gli altri "nipoti".*/
+
+main > div:last-child {
+    flex-grow: 3;
+}
+
+header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+/* L'header è una flexbox grazie a display e vede "brand" e "menu" allineati sulla stessa baseline e il justify-content:space-between agisce sullo spazio tra loro per giustificarli uno tutto a destra e uno tutto a sinistra. */
+
+.news-detail {
+    border: 1px solid grey;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+}
+/* alle immagini è applicato il flex e grazie al flex-wrap vanno a capo automaticamente quando non possono più stare sulla stessa linea. Non inserendo il wrap, le immagini spingono tutto il contenuto alla loro sinistra rimpicciolendo anche il contenitore sinistro e rendendo così inutile la divisione imposta dal flex grow. Il gap tra le immagini permette di distanziarle fra loro senza l'utilizzo di margini ecc, ma modificando solo lo spazio tra le immagini */
+
+.images img {
+    height: 70px;
+    width: 140px;
+}
+/* normalmente non è corretto modificare sia h che w perchè il contenuto subisce una deformazione in base alle sue reali dimensioni. In questo caso non importa ai fini dell'esercizio ed è stata ignorata. */
+
+.brand-details {
+    display: flex;
+    align-items: stretch;
+}
+/* applicato il flex, i contenitori di brand e description sono stati adattati per avere la stessa altezza. */
+
+.brand , .description {
+    border: 1px solid grey;
+    padding: 1em;
+}
+
+.brand {
+    font-weight: bold;
+}
+
+.description p {
+    margin: 0;    
+}
