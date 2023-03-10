@@ -1,0 +1,62 @@
+/* parte superiore */
+
+header {
+    display:flex;
+    justify-content:space-between;
+    border-bottom: 1px solid purple;
+    margin-bottom: 1rem;
+    align-items:center;
+}
+
+.logo {
+    width: 4rem;
+}
+
+ol {
+    display:flex;
+    list-style-type: none;
+    gap: 2rem;
+}
+/* immagini e frasi specifiche */
+
+.center {
+    display:flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    /* gap: 10px; */
+}
+/* il gap allontanerebbe le immagini in maniera corretta però al passaggio del mouse e apparizione del testo, le immagini si spostano leggermente verso destra per poi tornare al loro posto una volta scomparso nuovamente il testo. Per questo inserisco direttamente un margine alle immagini */
+
+.center img {
+    width:100px;
+    margin: 1rem;
+}
+
+.center > div span{
+    display:none;
+}
+
+.photo-1:hover ~ div > .sentence-1{
+    display: initial;
+}
+
+.photo-2:hover ~ div > .sentence-2{
+    display: initial;
+}
+.photo-3:hover ~ div > .sentence-3{
+    display: initial;
+}
+.photo-4:hover ~ div > .sentence-4{
+    display: initial;
+}
+.photo-5:hover ~ div > .sentence-5{
+    display: initial;
+}
+.photo-6:hover ~ div > .sentence-6{
+    display: initial;
+}
+.photo-7:hover ~ div > .sentence-7{
+    display: initial;
+}
+
+/* la tilde ~ è un selettore che permette di ... */

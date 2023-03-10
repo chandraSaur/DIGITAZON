@@ -3,12 +3,12 @@ main {
 }
 
 main > div:first-child {
-    flex-grow: 2;
+    flex-grow: 6;
     border-right: 1px solid gray;
 }
-/* flex-grow permette di sistemare i due più piccoli contenitori che si trovano l'uno accanto all'altro in modo tale che uno prenda i 2/3 e l'altro l'1/3 rimanenti (6+3=9); il border right crea la riga tra le due aree mentre padding e margin aiutano a distanziare gli elementi interni dal perimetro. Il > tra main e div aiuta a indicare il div direttamente figlio di main e non gli altri "nipoti".*/
+/* flex-grow permette di sistemare i due più piccoli contenitori che si trovano l'uno accanto all'altro in modo tale che uno prenda i 2/3 e l'altro l'1/3 rimanenti; il border right crea la riga tra le due aree mentre padding e margin aiutano a distanziare gli elementi interni dal perimetro. Il > tra main e div aiuta a indicare il div direttamente figlio di main e non gli altri "nipoti".*/
 main > div:last-child {
-    flex-grow: 1;
+    flex-grow: 9;
 }
 main > div {
     padding: 2rem ;
