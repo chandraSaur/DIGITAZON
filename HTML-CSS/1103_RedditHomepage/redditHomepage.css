@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    margin:0px;
+    padding: 0px;
+    font-size: 13px;
+}
+img[src*="logo"] {
+    height: 40px;
+}
+
+/* HEADER: barra superiore d'accesso, ricerca e login area */
+header {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: nowrap;
+    border-bottom: 1px solid #d3d3d33a;
+}
+header > div {
+    display:flex;
+    align-items: center;  
+    flex-basis: 20%;
+}
+
+/* barra di ricerca */
+/* Flex basis in questo div con :nth-child() e' più specifico e sovrascrive il 30 imposto precedentemente a tutti e che rimane agli altri due */
+header > div:nth-child(2){
+    flex-basis: 40%;
+    background-color: #d3d3d33a;
+    border: 1px solid #d3d3d33a;
+    border-radius: 40px;  
+    gap: 1rem;
+}
+header > div:nth-child(2):hover {
+    background-color: #fff;
+    border: 1px solid #106be2;
+}
+img[src*="search"] {
+    height: 15px;
+    margin: 10px;
+}
+
+/* area login a destra dell'header */
+.login-area {
+    justify-content: flex-end;
+    flex-basis: 40%;
+    gap: 2rem;
+}
+.login-area span{
+    border-radius: 40px;
+}
+.login-area h4{
+    margin: 10px;
+}
+/* senza lo span, all'aumentare delle dimensioni del background per dare la parvenza di un bottone, a causa del box-sizing veniva automaticamente ingrandito tutto l'header. Con l'inserimento dello span, è stato fermato questo comportamento ed è stato sistemato direttamente l'h4 in modo tale che si adattasse alle dimensioni da me desiderate. */
+
+.login-area span:first-child /*~ .tendenza-comunità*/{
+    background-color: #d3d3d33a;
+    /* in questo caso la tilde non funziona perchè non hanno lo stesso padre ma lo stesso NONNO */
+}
+.login-area span:first-child:hover, .right-macro-area, .grey-hover:hover{
+    background-color: #d3d3d3c4;
+}
+/* con la virgola SI perchè non guarda ai parenti. Ok risparmiare una riga di codice ma è corretto  dal punto di vista della comprensione del codice stesso?  */
+.login-area span:nth-child(2){
+    background-color: #ff4500;
+}
+.login-area span:nth-child(2):hover{
+    background-color: #ff5f24;
+}
+img[src*="avatar"] {
+    height: 37px;
+    /* margin: 10px; */
+    border: 1px solid white;
+    padding: 5px 20px 5px 5px;
+}
+img[src*="avatar"]:hover{
+    border: 1px solid #d3d3d33a;
+    padding: 5px 20px 5px 5px;
+}
+
+/* MAIN PRIMI DUE DIV FEED/ARGOMENTI E TENDENZA/POST/COMUNITA'*/
+main{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.left-macro-area, .right-macro-area{
+    display: flex;
+    flex-direction: column;
+}
+
+/* parte sinistra */
+.left-macro-area {
+    flex-basis: 15%;  
+} 
+
+.left-macro-area span{
+    padding: 1px 20px;
+}
+.left-macro-area h5, .subtitle{
+    display: block;
+    text-transform: uppercase;
+    margin: 23px 0px 10px;
+}
+/* parte destra */
+.right-macro-area {
+    display: flex;
+    flex-basis: 85%;
+    align-items: center;
+}
+/* .subtitle {
+    display: block;
+    text-transform: uppercase;
+} */
+.right-macro-area img{
+    height: 100px;
+    border-radius: 20px;
+}
+
+
+
+/* CONTINUARE CON PARTE SOTTOSTANTE DELLA MACRO AREA. AGGIUNGERE NEL CASO ANCHE PARTE SOTTO DELLA PARTE SINISTRA CON MESSAGGIO "ISCRIVITI A REDDIT" */
