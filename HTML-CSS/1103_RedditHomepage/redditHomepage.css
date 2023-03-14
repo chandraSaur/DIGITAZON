@@ -62,16 +62,15 @@ img[src*="search"] {
 .login-area p:first-child:hover, .right-macro-area, .grey-hover:hover{
     background-color: #d3d3d3c4;
 }
-/* con la virgola SI perchè non guarda ai parenti. Ok risparmiare una riga di codice ma è corretto  dal punto di vista della comprensione del codice stesso?  */
-.login-area p:nth-child(2){
+.login-area p:nth-child(2), .signup-banner p:last-child{
     background-color: #ff4500;
+    color: #ffffff;
 }
-.login-area p:nth-child(2):hover{
+.login-area p:nth-child(2):hover, .signup-banner p:last-child:hover{
     background-color: #ff5f24;
 }
 img[src*="avatar"] {
     height: 37px;
-    /* margin: 10px; */
     border: 1px solid white;
     padding: 5px 20px 5px 5px;
 }
@@ -108,6 +107,7 @@ main{
     margin: 23px 0px 10px;
     font-weight: bold;
 }
+/* prova inserimento height 100% per portare il signup banner più sotto possibile nella pagina VISIBILE senza la necessità di arrivare alla fine della pagina scollando*/
 .signup-banner {
     align-items: flex-end;
     padding: 40px 15px 20px;
@@ -116,14 +116,13 @@ main{
 
 }
 .signup-banner p:last-child{
-    background-color: #106be2;
     text-align: center;
-    color: #ffffff;
     margin-top: 30px;
 }
-.signup-banner p:last-child:hover{
+/* .signup-banner p:last-child:hover{
     background-color: #106be2d7;
-}
+} */
+
 /* parte destra */
 .right-macro-area {
     display: flex;
