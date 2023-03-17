@@ -31,6 +31,14 @@ img[src*="Screenshot"] {
     filter: drop-shadow(0 0 9px rgb(145, 144, 144));
 }
 
+/* form > input:nth-child(2) {
+    visibility: hidden;
+}
+.cta:hover ~ .username {
+    visibility: visible;
+}      
+TRUCCO interessante, sopperisce alla mancanza di JS. Interessante ma non da usare */
+
 main {
     display: flex;
 }
