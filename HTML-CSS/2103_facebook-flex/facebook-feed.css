@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    background-color: rgba(22, 22, 64, 0.673);
+    color: white;
+}
+
+img[alt*=logo]{
+    width: 70px;
+}
+
+img[alt*=avatar]{
+    width: 50px;
+    border-radius: 40px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+header div:first-child{
+    justify-content: flex-start;
+}
+
+header div:nth-child(2){
+    justify-content: space-around;
+}
+
+header div:nth-child(3){
+    justify-content: flex-end;
+}
+
+.fa-solid{
+    color: white;
+}
+
+main{
+    display: flex;
+    gap: 30px;
+}
+
+main section:nth-child(odd){
+    flex-basis: 20%
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+.Feed{
+    flex-basis: 60%;
+    text-align: center;
+}
+
+
+.Feed > div{
+    border-radius: 10px;
+    background-color: rgba(22, 22, 64, 0.424);
+}
+
+.Feed > div:first-child{
+    display: flex;
+    justify-content: space-around;
+}
+
+.stories {
+    display: flex;
+    justify-content: center;
+}
+
+.stories img{
+    width: 200px;
+}
+
+.post-something div {
+    display: flex;
+    justify-content: center;
+}
+
+.post div:first-child{
+    display: flex;
+}
