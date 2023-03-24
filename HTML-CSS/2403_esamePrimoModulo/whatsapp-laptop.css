@@ -1,33 +1,3 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-}
-
-:root{
-    --input_color: #d5d8da;
-    --whatsapp_color: #25d365a4;
-    --header_footer_color: #F0F2F5;
-}
-
-html, body{
-    background-color:#E5E3DE;
-    height: 100%;
-    width: 100%;
-}
-
-img[alt*=pic]{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
-img[src*=avatar]:hover{
-    border: 3px solid var(--whatsapp_color);
-}
-
 header, main {
     display: flex;
 }
@@ -68,56 +38,8 @@ main {
     flex-basis:75%;
 }
 
-.icons {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.icon{
-    padding: 5px;
-}
-
-.icon:hover{
-    padding: 5px;
-    border-radius: 20px;
-    background-color: var(--whatsapp_color) ;
-}
-
 .left-header > div:first-child {
     align-items: center;
-}
-
-.contacts{
-    display: flex;
-    flex-direction: column;
-}
-
-.contacts > header {
-    border-bottom: 1px solid var(--input_color);
-    justify-content: center;
-}
-
-.contacts > header > div:first-child{
-    background-color: var(--input_color);    
-    border-radius: 30px;
-    padding: 4px;
-    padding-left: 13px;
-    align-items: center;
-    margin: 10px;
-    width: 100%;
-}
-
-.contacts > ol {
-    height: 100%;
-}
-
-input {
-    background-color: var(--input_color);    
-    border: none;
-    width:100%;
-    outline: none;
-    border-radius: 30px;
 }
 
 .mobile-footer {
@@ -128,32 +50,6 @@ input {
 .mobile-footer > div {
     justify-content: space-between;
     padding: 5px 15px;
-}
-
-.contacts-list {
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid lightgrey;
-}
-
-.contacts-list:hover{
-    background-color: var(--input_color);
-}
-
-.message-preview {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.message-preview span:first-child{
-    font-weight: bold;
-}
-
-.message-preview span:last-child{
-    font-size: 10px;
 }
 
 .chat {
