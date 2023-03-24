@@ -1,5 +1,7 @@
 /* Ho deciso di visualizzare solamente l'area contenente la lista delle chat spostando i controlli e l'utente dall'header laptop al footer esclusivamente mobile creato per riprendere lo stile utilizzato nelle applicazioni mobile. Nell'header adesso è presente il titolo dell'area dell'app in cui ci si trova (la lista chat).  */
 
+/* Purtroppo ho visto troppo tardi che per le impostazioni degli elementi che rimangono visibili nel mobile non avevano bisogno di essere inserite in entrambi i css. Per questioni di tempo manterrò inalterati i documenti.  */
+
 
 .right-header, .left-header, .chat {
     display: none;
@@ -94,6 +96,7 @@ main {
     padding-left: 13px;
     align-items: center;
     margin: 10px;
+    width: 100%;
 }
 
 .contacts > ol {
@@ -103,7 +106,7 @@ main {
 input {
     background-color: var(--input_color);    
     border: none;
-    width:230px;
+    width:100%;
     outline: none;
     border-radius: 30px;
 }
