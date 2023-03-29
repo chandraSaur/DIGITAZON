@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- ESERCIZIO 1. Creare due stringhe e stampare la più lunga -->
+    <script>
+        let stringa1 = 'ciao'
+        let stringa2 = 'timo'
+        
+        if (stringa1.length > stringa2.length) {
+            console.log('La stringa più lunga è la prima: ' + stringa1)
+        } else if (stringa1.length < stringa2.length) {
+            console.log('La stringa più lunga è la seconda: ' + stringa2)
+        } else {
+            console.log('Le stringhe sono uguali a '+ stringa1 + ' ' + stringa2)
+        }
+    </script>
+
+    <!-- oppure -->
+
+    <script>
+        let x1 = 'salve'
+        let y1 = 'buonasera'
+        let messaggio1 = 'La stringa più lunga è: '
+        let messaggio2 = 'Le stringhe sono uguali.'
+        let messaggioFinale 
+
+        if (x1.length > y1.length) {
+            messaggioFinale = messaggio1 + x1
+        } else if (x1.length < y1.length) {
+            messaggioFinale = messaggio1 + y1
+        } else {
+            messaggioFinale = messaggio2 
+        }
+
+        console.log(messaggioFinale)
+    </script>
+
+    <!-- ESERCIZIO 2. creare una variabile stringa a piacere e stampare i caratteri invertiti e separati da - su un'unica riga -->
+
+    <script>
+        let z = 'luce'
+        let s
+        const space = '-'
+        let length = z.length
+
+        s = z.charAt(length-1) + space + z.charAt(length-2) + space + z.charAt(length-3) + space + z.charAt(length-4)
+
+        console.log(s)
+    </script>
+
+    <!-- ESECIZIO 3. Creare due variabili x e y con valori numerici a piacere. Se x è <= a y stampa green. In quel contesto se y=0 stampa red. Se è maggiore di y stampa blue. 
+    == coincide.
+    si attiva l'if (y==0) all'interno del primo if SOLO se prima x<=y. E' come se dovesse prima entrare nel primo contenitore e successivamente controlla se la y COINCIDE con 0 e non a prescindere. Nel caso in cui la x fosse stata 9 e la y 0 avrebbe letto solamente l'else senza entrare nel primo if che sarebbe stato come primo falso. -->
+    <script>
+        const x = -9
+        const y = 0
+        let messaggioConsole
+
+        if (x<=y) {
+            messaggioConsole='green'
+
+            if (y==0) {
+                messaggioConsole='red'
+            }
+            
+        } else {
+            messaggioConsole='blue'
+        }
+
+        console.log(messaggioConsole)
+    </script>
+</body>
+</html>
