@@ -10,15 +10,19 @@ function compareSet (set1, set2){
     if (set1.size != set2.size){
         return false
     } else {
-        set1.forEach(function (v) {
-            if(set2.has(v)){
-                return false
-            }
+        let r = true
+        set1.forEach(function (v){
+            if(!set2.has(v)){
+                r = false
+            }  
         })
+    return r
     }
 }
 
+const s1 = new Set ([10, 20, 30, 40])
+const s2 = new Set ([50, 60, 70, 80])
+const s3 = new Set ([50, 60, 70, 80])
 
+console.log(compareSet(s3,s2));
 
-const s1 = new Set (10, 20, 30, 40)
-const s2 = new Set (50, 60, 70, 80)

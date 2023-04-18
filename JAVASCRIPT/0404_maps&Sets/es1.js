@@ -1,6 +1,6 @@
-/*Ex 1
-creare una funzione compareMap che accetta in ingresso due mappe.
-La funzione restituisce true SE le due mappe sono mappe, SE hanno lo stesso numero di elementi e per le stesse chiavi gli stessi valori. Testare il funzionamento di compareMap passando due mappe diverse nella prima chiamata, e due mappe uguali nella seconda chiamata*/
+// Ex 1
+// creare una funzione compareMap che accetta in ingresso due mappe.
+// La funzione restituisce true SE le due mappe sono mappe, SE hanno lo stesso numero di elementi e per le stesse chiavi gli stessi valori. Testare il funzionamento di compareMap passando due mappe diverse nella prima chiamata, e due mappe uguali nella seconda chiamata*/
     
     function compareMap(map1, map2){
         if(!(map1 instanceof Map) || map2 instanceof Map == false){
