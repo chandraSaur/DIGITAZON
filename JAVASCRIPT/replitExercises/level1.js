@@ -33,6 +33,16 @@ function biggerString(a, b) {
 // ritorni un intero n che rappresenti i caratteri presenti nella
 // string passata, senza contare gli spazi
 
+function countNoSpaces(sentence) {
+  let countChar = 0
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence.charAt(i)!= ' '){
+      countChar++
+    }
+  } return countChar
+}
+
+console.log(countNoSpaces('quante lettere contiene questa frase?'))
 
 //1.4
 // scrivere una funzione chiamata countUndefinedKeys che 
@@ -40,6 +50,26 @@ function biggerString(a, b) {
 // ritorni un intero che rappresenti il numero di chiavi, presenti
 // nell'oggetto, che hanno valore undefined o null
 
+//creo una funzione che prende in ingresso un oggetto chiamato object
+//creo il contatore countFalsey e lo inizializzo da 0
+//utilizzo il metodo object.keys() che prende in ingresso l'oggetto e mi restituisce le chiavi in un array
+// ciclo l'array con for each
+// che prende la funzione di parametro k. 
+// K mi permette di raggiungere le chiavi e quindi i valori loro assegnati  
+// spiegazione dettagliata nel file daCapireMeglio.js
+
+function countUndefinedKeys(falsey) {
+  let countFalsey=0
+  Object.keys(falsey).forEach(function (k) {
+    if (falsey[k] == 'null' || falsey[k] == 'undefined') {
+      countFalsey++   
+    }
+  });
+  return countFalsey
+}
+
+const falseyValues = {1:'null', 2:'false',3:'empty string', 4:'undefined', 5:'0', 6:'NaN'}
+console.log(countUndefinedKeys(falseyValues));
 
 //1.5
 // scrivere una funzione chiamata countVowels che 
