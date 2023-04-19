@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        console.log('Esercizio1----------------------------------------')
+
+        {
+        // Ex 1
+        // creare una funzione 'ope' che prende in ingresso una stringa e due numeri.
+        // controlla il valore della stringa.
+        // Se è '+' restituisci la somma dei due numeri
+        // Se è '-' restituisci la differenza dei due numeri
+        // Se è '*' o 'x' restituisci la moltiplicazione dei due numeri
+        // Se è '/' restituisci la divisione dei due numeri
+        // altrimenti restituisci 0
+
+        // Chiama la funzione ope 4 volte variando ogni volta i valori utilizzati e stampa in console i risultati
+
+        function ope (string, firstNumber, secondNumber) {
+
+            if (string =='+'){
+                return firstNumber + secondNumber;
+            } else if (string == '-') {
+                return firstNumber - secondNumber;
+            } else if (string == '*' || string =='x') {
+                return firstNumber * secondNumber;
+            } else if (string == '/') {
+                return firstNumber / secondNumber;
+            } else {
+                return 0 
+            }
+        }
+
+        console.log(ope ('+', 1, 2));
+        console.log(ope ('-', 5, 25));
+        console.log(ope ('x', 3, 7));
+        console.log(ope ('/', 9, 3));
+        }
+
+        console.log('Esercizio2----------------------------------------')
+
+        {
+            
+            // Ex 2
+            // creare una funzione 'invertString' che prende in ingresso una stringa e la restituisce invertita.
+            // Chiamare la funzione con i seguenti valori e stampare i risulati in console:
+            // - javascript
+            // - console
+            // - anna
+            // - 100
+            // Nota: se il valore non è una stringa, ma un numero, stampa il numero moltiplicato per 10.
+            // Se il valore non è una stringa ne un numero, stampa 'errore'  
+
+            function invertString(word) {
+                
+                if ( typeof word =='string') {
+                    let letters = ''
+                    for (let i = word.length-1; i>=0; i--){
+                        letters += word[i]  
+                    }
+                    return letters
+                } else if (typeof word == 'number') {
+                    return word*10;
+                } else {
+                    return 'Errore'
+                }
+
+            }
+        
+        console.log(invertString('javascript'));
+        console.log(invertString('console'));
+        console.log(invertString('anna'));
+        console.log(invertString(100));
+        console.log(invertString(['ciao','salve']));
+        console.log(invertString(true));
+
+        }
+
+        console.log('Esercizio3----------------------------------------')
+
+        {
+            // Ex 3
+            // crea una funzione 'xRayArray' che prende in ingresso un array e mi stampa:
+            // - la lunghezza dell'array
+            // - se l'array contiene SOLO numeri o meno
+            // - se l'array è vuoto
+            // - se è un array oppure un altro tipo di dato
+            // La funzione NON restituisce nessun valore.
+            // Chiamare la funzione con i seguenti valori:
+            // - [10, 20, 30]
+            // - []
+            // - ['ciao', 100]
+            // - 'ciao' 
+
+            function xRayArray(a) {
+
+                if (Array.isArray(a)) {
+
+                    console.log(a.length) 
+
+                    for (let i=-1; i<a.length;i++){
+                        if (typeof a[i+1]=='number'){
+                        return 'only numbers' 
+                        } else {
+                        return 'not only numbers'
+                        } 
+                    }
+
+                    if (i>=0) {
+                        console.log();
+                    }
+                } 
+                
+            }
+
+
+        console.log(xRayArray([10, 20, 30]));
+        console.log(xRayArray([]));
+        console.log(xRayArray(['ciao','100']));
+        console.log(xRayArray(['ciao']));
+
+            // ------------------------- R I F A R E --------------------------------------
+
+
+        }
+
+        console.log('Esercizio4----------------------------------------')
+
+        {
+            // Ex 4
+            // crea una funzione 'isPalindrome' che prende una stringa in ingresso e mi dice se è palindroma.
+            // Chiamare la funzione con i seguenti valori:
+            // - anna
+            // - itopinonavevanonipoti
+            // - ugo
+
+            function isPalindrome(string) {
+                
+            }
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
