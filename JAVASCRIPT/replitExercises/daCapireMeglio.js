@@ -27,7 +27,6 @@ function countUndefinedKeys(falsey) {
   //spiegazione differenze chiamata
   object[key]   // > in questo caso quando object è un array (come trasformato con Object.keys())
   object.key    // > normale chiamata del valore corrispondente alla chiave in un oggetto. 
-  "key"
   
   // esempio di funzione con operatore ternario
   function count2(o) {
