@@ -147,11 +147,11 @@
                     vowels = true
                     }else if (es4[i] == '_') {
                         underscore =true
-                        }else if (es4[i]=='$') {
-                            dollar = true
-                            }else if (es4[i] >=0) {
-                                numbers=true
-                            } 
+                    }else if (es4[i]=='$') {
+                        dollar = true
+                    }else if (es4[i] >=0) {
+                        numbers=true
+                    } 
             }
 
             if (vowels && numbers && underscore && dollar){
