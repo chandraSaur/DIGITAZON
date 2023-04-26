@@ -76,6 +76,32 @@ console.log(countUndefinedKeys(falseyValues));
 // data una stringa in ingresso
 // ritorni il numero di vocali presenti nella stringa
 
+// PSEUDOCODICE
+// creo un'array chiamato vowels in cui inserisco le vocali
+// creo una stringa word
+// creo funzione countVowels che prende in ingresso una stringa (e l'array?).
+// creo un contatore numOfVowels, lo pongo uguale a zero e mi servirà per contare il numero di vocali incontrate
+// costruisco un ciclo for che va da i = 0 a i<stringa.length e progredisce di i++
+// al suo interno costruisco un altro for che lavora sull'array con j 
+// e nell'if controlla se charAt(i)==array[j] allora numOfVowels++ 
+// la funzione ritorna numOfVowels
+
+let vowels = ['a','e','i','o','u']
+let word = 'aiuola'
+
+function countVowels(string,array) {
+  let numOfVowels=0
+  for (let i = 0; i < string.length; i++) {
+    array.forEach(el => {
+      if (string.charAt(i)==el){
+        numOfVowels++
+      }
+    });
+  } return numOfVowels
+}
+
+console.log(countVowels(word,vowels));
+
 //1.6
 // scrivere una funzione chiamata createArray che 
 // dato un numero n in ingresso
