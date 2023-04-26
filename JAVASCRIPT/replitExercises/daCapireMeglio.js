@@ -44,6 +44,24 @@ function countUndefinedKeys(falsey) {
     }, 0)
   }
 
+  function reduce(arr, fn, accumulator) {
+    // dobbiamo scorrere sull'array
+    // per ogni elemento
+    //   invocare fn passando l'initial e l'i-esimo
+    //   memorizzare il valore ottenuto in initial
+    // ritornare itial
+    for (let i = 0; i < arr.length; i++) {
+      accumulator = fn(accumulator, arr[i])
+    }
+    return accumulator
+  }
+
+  function sum(a,b) { return a + b }
+  function product(a,b) { return a * b }
+
+  reduce([1,2,3], sum, 0)
+  reduce([1,2,3], product, 1)
+
 // altro esempio per comprendere il concetto. 
   let keys = Object.keys(obj)
   for (let index = 0; index < keys.length; index++) {
