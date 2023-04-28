@@ -1,22 +1,23 @@
-// Ex 4
-// creare una mappa che rappresenta 5 stili CSS a piacere e stamparla in output.
-// Creare la funzione showCSS che prende in ingresso la precedente mappa e stampa tutti i suoi elementi.
+// Ex 5
+// creare una funzione cmpArr che prende in ingresso 2 array e restituisce:
+// 1 se il primo ha dimensioni maggiori del secondo
+// -1 se il secondo ha dimensioni maggiori del primo
+// 0 se hanno dimensioni uguali
+// Testare in output il comportamento di tutte e 3 le casistiche.
 
-let m1 = new Map ([
-    ['background-color', 'purple'],
-    ['height', '200px'],
-    ['color', 'white'],
-    ['font-family', 'Arial'],
-    ['font-size','bold'],
-])
+function cmpArr (arr1,arr2){
 
-console.log(m1);
-
-function showCSS (map){
-    map.forEach(function (v, k) {
-        console.log(k + ' ' + v);  
-    })
+        if (arr1.length > arr2.length) {
+            return 1
+        } else if (arr1.length < arr2.length) {
+            return -1
+        } 
+        return 0
 }
 
-const showMap = showCSS(m1)
-console.log(showMap)
+let a1 = ['Cavolfiore', 'Broccolo']
+let a2 = ['Uovo']
+let a3 = ['12345678']
+
+// const compareLength = cmpArr(a1,a2)
+console.log(cmpArr(a1,a2));

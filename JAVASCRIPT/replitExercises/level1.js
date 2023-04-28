@@ -10,7 +10,7 @@ function between(a, b) {
     }
     return arr
   }
-  console.log(between(3,8))
+console.log(between(3,8))
 
 // 1.2 
 // scrivere una funzione chiamata biggerString che 
@@ -25,7 +25,7 @@ function biggerString(a, b) {
     }
   }
   
-  console.log(biggerString([1,4,7],[3]))
+console.log(biggerString([1,4,7],[3]))
 
 //1.3 
 // scrivere una funzione chiamata countNoSpaces che 
@@ -112,15 +112,67 @@ console.log(countVowels(word,vowels));
 // ad esempio per 0 ritorna []
 // ad esempio per -1 ritorna []
 
+
+//PSEUDOCODICE
+// creo la funzione createArray che prende in ingresso un numero n che sarà sia il numero di elementi nell'array che il numero che sarà ripetuto
+// creo l'array vuoto da riempire
+// creo un ciclo for che va da i=0 a i<n che continua per i++ 
+// il quale pusha ad ogni ciclo il numero n nell'array
+// la funzione ritorna l'array 
+
+function createArray(n) {
+  let arr = []
+  for (let i = 0; i < n; i++) {
+    arr.push(n)
+  }
+  return arr
+}
+
+console.log(createArray(0))
+
 //1.7
 // scrivere una funzione chiamata even che 
 // dato un array di numeri in ingresso
 // ritorni un array che contiene solo i numeri pari
 
+//PSEUDOCODICE
+// creo la funzione even che prende in ingresso un array di numeri misti
+// creo un array vuoto
+// creo un ciclo for che itera su tutti gli elementi, parte da 0 e finisce ad array.length 
+// inserisco un if per il quale se il numero corrispondente all'indice considerato è pari lo pusherà all'interno dell'array vuoto
+//ritorno l'array
+
+function even(arr) {
+  let emptyArr= []
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i]%2==0){
+      emptyArr.push(arr[i])
+    }
+  }
+  return emptyArr
+}
+
+console.log(even([2,5,8,9,3,-2,6]));
+
 //1.8
 // scrivere una funzione chiamata isDivisible che 
 // dato un numero a e un numero b
 // ritorni true se a e' divisibile per b, false altrimenti
+
+//PSEUDOCODICE
+//creo la funzione isDivisible che prende in ingresso due numeri (a, b)
+//scrivo un if per il quale se a diviso b da resto zero allora ritorno true
+//altrimenti ritorno false
+//
+//
+
+function isDivisible(a,b) {
+  if (a%b==0) {
+    return true
+  } return false
+}
+
+console.log(isDivisible(9,3));
 
 //1.9
 // scrivere una funzione chiamata isInArray che 
@@ -128,20 +180,99 @@ console.log(countVowels(word,vowels));
 // ritorna true se il numero e' presente nell'array
 // false altrimenti
 
+//PSEUDOCODICE
+//creo la funzione isInArray che prende in ingresso un array pieno di numeri ed un numero n 
+//posso utilizzare il metodo includes oppure il ciclo for che permette di controllare gli elementi dell'array uno alla volta. 
+//utilizzando il metodo includes, lo inserisco in un if e controllo se l'array include n e restituisce true nel caso sia così
+//altrimenti restituisce false
+//con il ciclo avrei dovuto iterare e controllare gli elementi uno ad uno. Una volta che l'iesimo elemento dell'array fosse risultato uguale a n allora la funzione avrebbe restituito true altrimenti false
+
+function isInArray(arr, n) {
+  if (arr.includes(n)) {
+    return true
+  } return false
+}
+
+console.log(isInArray([1,2,3],4));
+console.log(isInArray([1,2,3],3));
+
 //1.10
 // scrivere una funzione chiamata isInString che 
 // date due stringhe in ingress
 // ritorna true se la seconda stringa e' contenuta nella prima
 // false altrimenti
 
+//PSEUDOCODICE
+//creo la funzione isInString che prende in ingresso due stringhe s1 ed s2
+//utilizzo il metodo includes e controllo if in s1 vi è s2 ritorno true altrimenti false.
+//è possibile anche risolverlo senza l'includes dando in ingresso anche una funzione in grado di creare un array con le parole della frase allArrayWords 
+//creo un for che itera su tutti gli elementi dell'array creato con la funzione allArrayWords (scritta dopo) e controlla se l'i-esimo elemento corrisponde ad s2
+// se s2 è contenuto in s1 restituisco true altrimenti false
+// allArrayWords  prende in ingresso la s1: 
+//creo un array vuoto
+//creo una stringa vuota CURRENT
+//creo un for che va da 0 alla lunghezza di s1 e aumenta di 1. 
+//itero tutte le lettere della stringa e li aggiungo a current . 
+// se non incontro uno spazio agigungo la lettera a current altrimenti pusho current nell'array vuoto e resetto il valore di current. continuo così sino alla fine della stringa
+//pusho l'ultimo current creato se no la funzione restituirebbe l'array senza aver aggiunto l'ultima parola
+// ritorno l'array creato
+console.log('------isInString------');
+
+function isInString(fn,s1,s2) {
+  let toggle = false
+  fn(s1).forEach(element => {
+    console.log(element[i]);
+    if(element[i]==s2){
+      toggle = true
+    }
+  });
+  return toggle
+}
+
+function allArrayWords(s1) {
+ let arr = []
+ let current=''
+ for (let i = 0; i < s1.length; i++) {
+    if (s1.charAt(i)!==' '){
+      current+= s1.charAt(i)
+    } else {
+      arr.push(current)
+      current = ''
+    }
+ } 
+ arr.push(current) 
+ return arr
+}
+
+console.log(isInString(allArrayWords,'Welcome to Jurassic Park','Park'));
+
+// console.log(isInString(allArrayWords,'Welcome to Jurassic Park', 'Jurassic'));
+
+
+
 //1.11
 // scrivere una funzione chiamata larger che 
 // dati due numeri a e b che ritorna il maggiore
+
+//PSEUDOCODICE
+//
+//
+//
+//
+//
+
 
 //1.12
 // scrivere una funzione chiamata lessThan che 
 // dati due numeri a e b che ritorna true se a e' minore di b
 // false altrimenti
+
+//PSEUDOCODICE
+//
+//
+//
+//
+//
 
 //1.13
 // scrivere una funzione chiamata stringConcat che 
@@ -150,9 +281,24 @@ console.log(countVowels(word,vowels));
 // delle due, con in mezzo il simbolo #
 // ad esempio per "link" e "query" ritorna "link#query"
 
+//PSEUDOCODICE
+//
+//
+//
+//
+//
+
+
 //1.14
 // scrivere una funzione chiamata sum che 
 // dato un array di numeri in ingresso
 // ritorni la somma dei numeri contenuti nell'array
+
+//PSEUDOCODICE
+//
+//
+//
+//
+//
 
 

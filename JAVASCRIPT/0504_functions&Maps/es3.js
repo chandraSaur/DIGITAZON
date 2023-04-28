@@ -1,20 +1,22 @@
-// Ex 3
-// creare la funzione invertCase che prende in ingresso una stringa.
-// Se la stringa è in lower case, restituisce la stringa in upper case.
-// Se la stringa è in uppe rcase restituisce la stringa in lower case.
-// Assumere che sia in una forma o l'altra.
-function invertCase(word) {
-    if (word == word.toUpperCase()){
-        return word.toLowerCase()
-    } else {
-        return word.toUpperCase()
-    }
+// Ex 4
+// creare una mappa che rappresenta 5 stili CSS a piacere e stamparla in output.
+// Creare la funzione showCSS che prende in ingresso la precedente mappa e stampa tutti i suoi elementi.
 
+let m1 = new Map ([
+    ['background-color', 'purple'],
+    ['height', '200px'],
+    ['color', 'white'],
+    ['font-family', 'Arial'],
+    ['font-size','bold'],
+])
+
+console.log(m1);
+
+function showCSS (map){
+    map.forEach(function (v, k) {
+        console.log(k + ' ' + v);  
+    })
 }
 
-let s1 = 'CIAO'
-let s2 = 'ciao'
-
-const toCase = invertCase(s2)
-
-console.log(toCase);
+const showMap = showCSS(m1)
+console.log(showMap)

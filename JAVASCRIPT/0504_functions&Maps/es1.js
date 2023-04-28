@@ -1,15 +1,39 @@
-// Ex 1
-// creare la funzione diffArray che prende in ingresso due array.
-// Gli array dovranno contenere da 3 a 8 numeri.
-// All'interno della funzione trovare il numero più grande del primo array e il numero più piccolo del secondo array.
-// La funzione restituisce la differenza tra il primo numero e il secondo. 
-// Stampare il risultato in output.
+// Ex 2
+// creare la funzione countVowels che prende in ingresso una stringa, e restituisce una mappa che avrà per chiavi tutte le vocali alfabetiche e per rispettivi valori il numero di occorrenze di ogni vocale nella stringa
+// es 'ciao a tutti'   produce  { a => 2, e => 0, i => 2, o => 1, u => 1 }
+function countVowels(word) {
 
-function diffArray(arr1, arr2) {
-    for (let i=0; i < arr1.length; i++)
+    let m1 = new Map()
+    let counters = [0, 0, 0, 0, 0]
+        
+        for (let i=0; i<word.length; i++) {
+            if (word[i] == 'a'){
+                counters[0]++
+            }
+            if (word[i] == 'e'){
+                counters[1]++
+            }
+            if (word[i] == 'i'){
+                counters[2]++
+            }
+            if (word[i] == 'o'){
+                counters[3]++
+            }
+            if (word[i] == 'u'){
+                counters[4]++
+            }
+        }
+    
+        m1.set('a',counters[0])        
+        m1.set('e',counters[1])
+        m1.set('i',counters[2])
+        m1.set('o',counters[3])
+        m1.set('u',counters[4])
 
+        return m1 
 }
 
+let string1 = 'ciao a tutti'
+const fun = countVowels(string1)
 
-let a = [3, 50, 22, 54, 9, 82]
-let b = [6, -70, 42, 25]
+console.log(fun);
