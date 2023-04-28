@@ -1,11 +1,27 @@
 // es 1
 //PSEUDOCODICE
 //creo la stringa SPESE
-//
-//
-//
-//
-//
+//creo array REPARTI
+//creo un array vuoto REPARTO
+//creo una stringa vuota ELEMENT 
+//creo una prima funzione createMatrix che prende in ingresso la stringa e restituisce una matrice
+//in un for 
+//  riempio la stringa vuota element e ogni volta che trovo un a capo pusho nell'array REPARTO
+//  se trovo  due a capo consecutivi
+//  pusho REPARTO nella matrice REPARTI
+//  resetto il valore di ELEMENT
+//  resetto REPARTO
+//continuo fin quando non finisce la stringa
+//creo un'array  SOCIETA' in cui inserisco degli oggetti nei quali assegno alla chiave reparto il primo elemento di ogni array nella matrice
+//assegno alla chiave spesa la somma di tutti gli altri elementi degli array nella matrice
+//creo una funzione printSocietyExpenses  che prende in ingresso l'oggetto
+//creo una variabile MAXVALUE
+//se il valore della chiave spesa è maggiore di max value
+//  riassegno a maxvalue il valore della suddetta chiave
+//faccio questo per tutti i valori della chiave spesa. 
+// ritorno la chiave il cui valore è uguale a maxvalue 
+// ritorno maxvalue
+//ragiono allo stesso modo ma per cercare MINVALUE
 
 let spese = `
 Cancelleria
@@ -21,6 +37,27 @@ Servizi igenici
 Vendite
 0
 `
+
+let reparti = []
+let reparto = []
+
+function createMatrix(string) {
+    let element = ''
+    for (let i = 0; i<string.length; i++) {
+        element = element + string.charAt(i)
+        if (string.charAt(i)=='/n'){
+            reparto.push(element)
+            element = ''
+        }
+        if (string.charAt(i)=='/n' && string.charAt(i+1)=='/n'){
+           reparti.push(reparto)
+            element = ''
+            reparto = [] 
+        }
+    }
+}
+
+console.log(createMatrix(spese));
 
 // es 2 
 // PSEUDOCODICE
