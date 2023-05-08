@@ -50,7 +50,7 @@ function createMatrix(string) {
             element = ''
         }
         if (string.charAt(i)=='/n' && string.charAt(i+1)=='/n'){
-           reparti.push(reparto)
+            reparti.push(reparto)
             element = ''
             reparto = [] 
         }
@@ -118,4 +118,4 @@ function crazyString(string) {
     
 }
 
-console.log(crazyString('~ Papa’, come sta Church? ~'));
+console.log(crazyString('Lei è pazza'));
