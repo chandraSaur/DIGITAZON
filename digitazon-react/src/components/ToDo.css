@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    background-color: #FFFAF4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h1 {
+    color: #D25380;
+    margin: 50px;
+}
+
+.container ul {
+    list-style-type:circle;
+    padding-left:20px; 
+}
+
+.container div input:focus {
+    border-color:#E08E6D;
+    
+}
