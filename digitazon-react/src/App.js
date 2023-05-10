@@ -1,10 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import { Fetch } from './components/Fetch'
-import { Hooks } from './components/Hooks'
-import { Hooks2 } from './components/HooksCopy'
-import { RedInput } from './components/RedInput'
-import { PingPong } from './components/PingPong'
+// import { Fetch } from './components/Fetch'
+// import { Hooks } from './components/Hooks'
+// import { Hooks2 } from './components/HooksCopy'
+// import { RedInput } from './components/RedInput'
+// import { PingPong } from './components/PingPong'
+import { ToDo } from './components/ToDo'
+
+
 
 function App() {
   return (
@@ -29,7 +32,8 @@ function App() {
     // <Hooks />
     // <Hooks2 />
     // <RedInput/>
-    <PingPong/>
+    // <PingPong/>
+    <ToDo />
   )
 }
 
