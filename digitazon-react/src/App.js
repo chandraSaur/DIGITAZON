@@ -5,7 +5,10 @@ import './App.css';
 // import { Hooks2 } from './components/HooksCopy'
 // import { RedInput } from './components/RedInput'
 // import { PingPong } from './components/PingPong'
-import { ToDo } from './components/ToDo'
+// import { ToDo } from './components/ToDo'
+// import { ExcelCopy } from './components/ExcelCopy'
+import { Excel } from './components/Excel'
+
 
 
 
@@ -33,7 +36,11 @@ function App() {
     // <Hooks2 />
     // <RedInput/>
     // <PingPong/>
-    <ToDo />
+    // <ToDo />
+    // <ExcelCopy />
+    <Excel />
+
+
   )
 }
 
