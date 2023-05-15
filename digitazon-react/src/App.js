@@ -8,11 +8,8 @@ import './App.css';
 // import { ToDo } from './components/ToDo'
 // import { ExcelCopy } from './components/ExcelCopy'
 // import { Excel } from './components/Excel'
-import { MultipleAsync } from './components/MultipleAsync'
-
-
-
-
+// import { CheckboxToDo } from './components/CheckboxToDo'
+import { CrazyButton } from './components/CrazyButton'
 
 function App() {
   return (
@@ -41,8 +38,8 @@ function App() {
     // <ToDo />
     // <ExcelCopy />
     // <Excel />
-    <MultipleAsync />
-  )
+    // <CheckboxToDo />
+    <CrazyButton />  )
 }
 
 export default App;
