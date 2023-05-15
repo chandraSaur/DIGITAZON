@@ -7,8 +7,9 @@ import './App.css';
 // import { PingPong } from './components/PingPong'
 // import { ToDo } from './components/ToDo'
 // import { ExcelCopy } from './components/ExcelCopy'
-import { Excel } from './components/Excel'
-
+// import { Excel } from './components/Excel'
+// import { CheckboxToDo } from './components/CheckboxToDo'
+import { CrazyButton } from './components/CrazyButton'
 
 
 
@@ -38,8 +39,9 @@ function App() {
     // <PingPong/>
     // <ToDo />
     // <ExcelCopy />
-    <Excel />
-
+    // <Excel />
+    // <CheckboxToDo />
+    <CrazyButton />
 
   )
 }
