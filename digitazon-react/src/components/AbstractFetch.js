@@ -16,7 +16,7 @@ function Fetch({URL,setRes}){
     },[])
 }
 
-export default function AbstractFetch(){
+export function AbstractFetch(){
     let [res,setRes] = useState()
     
     return(

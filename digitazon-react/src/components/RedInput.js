@@ -9,7 +9,7 @@ export default function App() {
   )
 }
 
-function RedInput() {
+ export function RedInput() {
   const [value, setValue] = useState('') // 1.2
   const [color, setColor] = useState('') // 3
   const [boo, setBoo] = useState(true) // 4

@@ -1,0 +1,43 @@
+.app-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ACBCFF;
+    height: 100px;
+    
+}
+
+.sidebar {
+    display: flex;     
+    background-color: #E6FFFD;
+    justify-content: space-evenly;
+}
+
+.sidebar ul {
+    padding:0;
+    margin-left: 20px;
+    margin-top: 200px
+}
+
+.sidebar li {
+    border: 1px solid black;
+    border-radius: 10%;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+.sidebar li:hover{
+    background-color: #ACBCFF;
+}
+
+.sidebar a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 40px;
+}
+
+.sidebar a:focus {
+    background-color: #ACBCFF;
+    border-radius: 10%;
+}
