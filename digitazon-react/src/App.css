@@ -47,3 +47,7 @@ li {
 .sidebar > nav {
   margin-right: 25px;
 }
+
+.dotted {
+  list-style-type:circle;
+}

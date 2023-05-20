@@ -2,7 +2,7 @@
 
 // fill, filter, reduce, map , includes, indexOf, join, split, splice, slice, endsWith, 
 // startsWith, Object.keys, parseInt, pop, push, shift, unshift, trim, toLowerCase, toUpperCase,
-// charAt, sort,  alert, concat  + spread operator
+// charAt, sort,  alert, concat, test + spread operator
 
 // 1. FILL()
 // metodo degli array che permette di cambiare il contenuto dell'array con un valore statico 
@@ -124,6 +124,7 @@ let res = els.filter(s => isUpperCase(s[0]))
 //10. slice
 //
 //
+// slice(0,-1) il -1 prende in considerazione l'ultimo, LEVA L'ULTIMO CARATTERE. 
 
 
 
@@ -212,6 +213,12 @@ let res = els.filter(s => isUpperCase(s[0]))
 
 
 
+//25. TEST()
+// il metodo test: utilizzato per verificare se una stringa corrisponde al 
+// pattern definito dall'espressione regolare. >> espressione.test(stringa da controllare)
+
+
+
 // SPREAD
 // in fase di invocazione permette di prendere qualsiasi parametro in ingresso ed inserirlo in un array unico 
 // chiamato come vogliamo (...nomeArray) possono esserci anche parametri e poi uno spread operator: in questo caso
@@ -225,3 +232,4 @@ arr[0]= 42
 
 // anche modificando il primo elemento del primo array (da 1 a 42), il secondo non subirà modifiche poichè è 
 // effettivamente una copia del primo!
+

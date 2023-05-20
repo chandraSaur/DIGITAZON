@@ -71,7 +71,7 @@ function MessageBar({ onNewMessage }) {
         value={msg}
         onChange={(e) => setMsg(e.target.value)}
       />
-      <button onClick={() => onNewMessage(user, msg)}>Send Message</button>
+      <button onClick={() => onNewMessage(user, msg)}> Send Message </button>
     </div>
   );
 }

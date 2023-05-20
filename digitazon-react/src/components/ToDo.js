@@ -16,8 +16,6 @@ export function ToDo() {
         setTasks(newTasks)
     }
 
-    const [isClicked, setIsClicked] = useState(false)
-
     return (
     <div className="container">
         <h1>Simple To Do List </h1>

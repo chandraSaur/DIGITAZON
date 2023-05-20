@@ -14,6 +14,10 @@ import { CheckboxToDo } from './components/CheckboxToDo'
 import { CrazyButton } from './components/CrazyButton'
 import { AbstractFetch } from './components/AbstractFetch'
 import { MultipleAsync } from './components/MultipleAsync'
+import { VideoApp } from './components/Video'
+import { DottedList } from './components/DottedList'
+import { RGBFinder } from './components/RGBFinder'
+import { DancingLabel } from './components/DancingLabel'
 
 
 
@@ -38,6 +42,10 @@ function Main() {
             <li><Link to="/multipleasync">MultipleAsync</Link></li>
             <li><Link to="/pingpong">PingPong</Link></li>
             <li><Link to="/redinput">RedInput</Link></li>
+            <li><Link to="/video">VideoApp</Link></li>
+            <li><Link to="/dottedlist">DottedList</Link></li>
+            <li><Link to="/rgbfinder">RGBFinder</Link></li>
+            <li><Link to="/dancinglabel">DancingLabel</Link></li>
           </ul>
         </nav>
         <Outlet />
@@ -63,6 +71,10 @@ function App() {
           <Route path="multipleasync" element={<MultipleAsync/>} />
           <Route path="pingpong" element={<PingPong />} />
           <Route path="redinput" element={<RedInput/>} />
+          <Route path="video" element={<VideoApp/>} />
+          <Route path="dottedlist" element={<DottedList/>} />
+          <Route path="rgbfinder" element={<RGBFinder/>} />
+          <Route path="dancinglabel" element={<DancingLabel/>} />
         </Route>
       </Routes>
     </BrowserRouter>

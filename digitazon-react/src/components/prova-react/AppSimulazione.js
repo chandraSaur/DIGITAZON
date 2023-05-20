@@ -35,6 +35,7 @@ function Main() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}>
+            <Route index element={<PostUno/>}/>
             <Route path="/postuno" element={<PostUno />} />
             <Route path="/postdue" element={<PostDue />} />
             <Route path="/posttre" element={<PostTre />} />
