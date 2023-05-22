@@ -2,15 +2,90 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #263159;
 }
 
-.App {
-  display:flex;  
+.Page {
+ display: flex;
+ padding-left: 20px ;
+ background-color: #B9EDDD;
+ padding-top: 30px;
+
 }
 
-.Page header img {
+.Cart{
+  width: 1280px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px 0 30px ;
+  background-color: white;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.Cart li {
+  list-style-type: none;
+  margin-bottom: 10px;
+  margin: 20px 0;
+}
+
+#rimuovi{
+  text-decoration: underline;
+  color: #2626b2;
+  padding: 10px 0 30px 0;
+}
+
+.Name-price, .App header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Name-price:nth-child(2) {
+  margin-right: 30px;
+  font-weight: bold;
+}
+
+.Cart span {
+  align-items: end;
+}
+
+.App header {
+  padding: 30px;
+  background-color: #577D86;
+}
+
+.App header div input, button{
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.App header img {
   width: 100px;
+}
+
+.User {
+  padding:10px;
+  background-color: white;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.User:hover{
+  background-color: #73e29c;
+
+}
+
+.card {
+  width: 300px; /* Imposta la larghezza desiderata per il contenitore */
+  border-radius: 20px;
+  background-color: white;
+  padding: 20px;
+}
+
+.card h3{
+  word-wrap: break-word;
+  margin-bottom: 40px;
 }
 
 .card-footer{
@@ -23,9 +98,12 @@
   font-size: 25px;
   font-weight: bold;
 }
+.card-footer button, .App header div button{
+background-color: #73e29c;
+}
 
 .img-container{
-  width: 300px; 
+  width: auto; 
   height: 300px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -36,8 +114,9 @@
   background-position: center;
 }
 
-.products{
+.product{
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
+
