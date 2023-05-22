@@ -94,6 +94,3 @@ function App() {
 }
 
 export default App;
-
-// implementare la funzionalità della barra di ricerca.
-// collego l'input al bottone in maniera tale da 
