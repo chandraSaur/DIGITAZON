@@ -46,8 +46,16 @@
   font-weight: bold;
 }
 
+.Cart h2 {
+  margin-bottom: 20px;
+}
+
 .Cart span {
   align-items: end;
+}
+
+.Cart button {
+  margin-top: 30px;
 }
 
 .App header {
@@ -98,8 +106,8 @@
   font-size: 25px;
   font-weight: bold;
 }
-.card-footer button, .App header div button{
-background-color: #73e29c;
+.card-footer button, .App header div button, .Cart button {
+  background-color: #73e29c;
 }
 
 .img-container{
@@ -108,7 +116,6 @@ background-color: #73e29c;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   background-size: cover;
   background-position: center;

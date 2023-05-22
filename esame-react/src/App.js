@@ -1,6 +1,17 @@
 import './App.css';
 import {useState, useEffect} from "react"
 
+// implementare funzione di ricerca tramite input PSEUDOCODICE
+// creare uno stato con la parola cercata tipo const [search, setSearch] = useState ("")
+// modificare questo stato in base all'onChange dell'input tipo onChange={(e)=> setSearch(e.target.value)}
+// con il click del bottone attivare una funzione searchInput che filtri con una filter la lista dei prodotti e trovi quelli corrispondenti al nome scritto. 
+// questa nuova array filtrata sarà mappata in modo da mostrare a video soltanto quei prodotti. 
+// Siccome si vuole lasciare all'apertura della pagina la lista dei prodotti disponibili, si puà pensare di:
+// creare uno useEffect che ti attivi non appena cambia search e quindi viene schiacciato il bottone che da il via alla search;
+// ritornare a quel punto al posto della mappa di list, quella dell'array filtrato filterProduct 
+// OPPURE
+// creare una prop che dia "list" oppure "filterProduct" e che cambia non appena si schiaccia il pulsante di ricerca e il valore di search viene aggiornato con quello scritto nell'input. 
+
 function Product({title, price, thumbnail, handleCart}) {  //componente schede prodotti, prende con le prop le info dalla fetch
   return(
     <div className='card'>
@@ -88,10 +99,12 @@ function App() {
             )
           }
           </ul>
-          <div className='Name-price'>
-            <span>Totale:</span>
-            <span>{totaleCarrello}€</span>
+          <div className='Name-price Totale'>
+            <h3>Totale:</h3>
+            <h3>{totaleCarrello}€</h3>  
+            {/* risultato carrello ottenuto con l'aggiunta di oggetti man mano */}
           </div>
+          <button>Procedi al pagamento</button>
         </div>
       </div>
     </div>
@@ -99,15 +112,3 @@ function App() {
 }
 
 export default App;
-
-
-// implementare funzione di ricerca tramite input PSEUDOCODICE
-// creare uno stato con la parola cercata tipo const [search, setSearch] = useState ("")
-// modificare questo stato in base all'onChange dell'input tipo onChange={(e)=> setSearch(e.target.value)}
-// con il click del bottone attivare una funzione searchInput che filtri con una filter la lista dei prodotti e trovi quelli corrispondenti al nome scritto. 
-// questa nuova array filtrata sarà mappata in modo da mostrare a video soltanto quei prodotti. 
-// Siccome si vuole lasciare all'apertura della pagina la lista dei prodotti disponibili, si puà pensare di:
-// creare uno useEffect che ti attivi non appena cambia search e quindi viene schiacciato il bottone che da il via alla search;
-// ritornare a quel punto al posto della mappa di list, quella dell'array filtrato filterProduct 
-// OPPURE
-// creare una prop che dia "list" oppure "filterProduct" e che cambia non appena si schiaccia il pulsante di ricerca e il valore di search viene aggiornato con quello scritto nell'input. 
