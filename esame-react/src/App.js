@@ -19,6 +19,7 @@ function App() {
 
   const [list, setList] = useState([])   //serve per raccogliere i prodotti presi con la fetch
   const [cart, setCart] = useState([])   //serve per raccogliere gli elementi nel carrello
+  const [search, setSearch] = useState("")   
 
   useEffect(() => {  //effettuo chiamata asincrona per raccogliere i prodotti, ne prendo 30
     async function productsCall() {
@@ -41,6 +42,10 @@ function App() {
     setCart(newCart)
   }
 
+  function searchInput(name) {
+    let filterProduct = list.filter(n => n.title === name)
+  }
+
   const arrayPrezzi = cart.map(obj => obj.prezzo);          // prendo soltanto i valori della chiave prezzo 
   const totaleCarrello = arrayPrezzi.reduce((sum, key) => {  //uso la reduce per sommare i vari prezzi man mano che appaiono nel carrello e ovviamente vedere il prezzo scendere quando rimossi
     return sum + key;
@@ -51,8 +56,8 @@ function App() {
         <header>
           <img src="https://1000marche.net/wp-content/uploads/2020/03/Amazon-logo.png" alt="logo amazon" ></img>
           <div>
-            <input></input>
-            <button>Search</button>
+            <input onChange={(e) => setSearch(e.target.value)}></input>
+            <button onClick={()=> searchInput(search)}>Search</button>
           </div>
           <div className='User'>Mario Rossi</div>
         </header>
@@ -94,3 +99,15 @@ function App() {
 }
 
 export default App;
+
+
+// implementare funzione di ricerca tramite input PSEUDOCODICE
+// creare uno stato con la parola cercata tipo const [search, setSearch] = useState ("")
+// modificare questo stato in base all'onChange dell'input tipo onChange={(e)=> setSearch(e.target.value)}
+// con il click del bottone attivare una funzione searchInput che filtri con una filter la lista dei prodotti e trovi quelli corrispondenti al nome scritto. 
+// questa nuova array filtrata sarà mappata in modo da mostrare a video soltanto quei prodotti. 
+// Siccome si vuole lasciare all'apertura della pagina la lista dei prodotti disponibili, si puà pensare di:
+// creare uno useEffect che ti attivi non appena cambia search e quindi viene schiacciato il bottone che da il via alla search;
+// ritornare a quel punto al posto della mappa di list, quella dell'array filtrato filterProduct 
+// OPPURE
+// creare una prop che dia "list" oppure "filterProduct" e che cambia non appena si schiaccia il pulsante di ricerca e il valore di search viene aggiornato con quello scritto nell'input. 
