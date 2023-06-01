@@ -76,8 +76,7 @@ export const update = async (req, res) => {
     }
   };
 
-
-  if (res.getHeader('Authorization') == config.headers.Authorization){
+  if (req.get('Authorization') === config.headers.Authorization){
     let user = users[req.params.id]
       if (user) {
         let newUser = { ...user, ...req.body }
@@ -93,35 +92,56 @@ export const update = async (req, res) => {
               message: 'user not found'
             })
       }
+  } else {
+    res.send({
+      data: {},
+      error: true,
+      message: 'not authorized'
+    })
   }
 }
 
 export const remove = async (req, res) => {
-  let user = users[req.params.id]
-  if (user) {
-    // delete users[req.params.id]
-    users[req.params.id].cancelled = true
 
-    // make sure we delete any todos-users
-    // related to this user
-    Object.keys(todoUsers).forEach(idut => {
-      let split = idut.split('-')
-      if (split[0] == req.params.id) {
-        delete todoUsers[idut]
+  const token = 'Morena'
+  const config = {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  };
+
+  if (req.get('Authorization') === config.headers.Authorization){
+    let user = users[req.params.id]
+      if (user) {
+        // delete users[req.params.id]
+        users[req.params.id].cancelled = true
+
+        // make sure we delete any todos-users
+        // related to this user
+        Object.keys(todoUsers).forEach(idut => {
+          let split = idut.split('-')
+          if (split[0] == req.params.id) {
+            delete todoUsers[idut]
+          }
+        })
+        await fs.writeFile(DB_PATH_TODOS_USERS, JSON.stringify(todoUsers, null, '  '))
+        
+        await fs.writeFile(DB_PATH, JSON.stringify(users, null, '  '))
+        res.status(200).end()
+      } else {
+        res
+          .status(200)
+          .send({
+            data: {},
+            error: true,
+            message: 'user not found'
+          })
       }
-    })
-    await fs.writeFile(DB_PATH_TODOS_USERS, JSON.stringify(todoUsers, null, '  '))
-    
-    await fs.writeFile(DB_PATH, JSON.stringify(users, null, '  '))
-    res.status(200).end()
   } else {
-    res
-      .status(200)
-      .send({
+      res.send({
         data: {},
         error: true,
-        message: 'user not found'
+        message: 'not authorized'
       })
   }
 }
-    
