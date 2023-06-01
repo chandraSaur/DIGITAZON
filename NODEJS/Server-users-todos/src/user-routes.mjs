@@ -12,10 +12,11 @@ let NEXT = Object
 
 export const create = async (req, res) => {
   NEXT++
-  const response = await axios.get(`https://fakestoreapi.com/users/${NEXT}`)
+  let url = `https://fakestoreapi.com/users/${NEXT}`
+  const response = await axios.get(url)
   
   if (response){
-    users[NEXT] = response.body
+    users[NEXT] = response.data             //response.data poichè response ritorna un oggettone nel quale "data" è l'oggetto con i dati che mi interessano.
   } else {
     users[NEXT] = req.body
   }
@@ -67,31 +68,41 @@ export const search = (req, res) => {
 }
 
 export const update = async (req, res) => {
-  let user = users[req.params.id]
-  if (user) {
-    let newUser = { ...user, ...req.body }
-    users[req.params.id] = newUser
-    await fs.writeFile(DB_PATH, JSON.stringify(users, null, '  '))
-    res.send(newUser)
-  } else {
-    res
-      .status(200)
-      .send({
-        data: {},
-        error: true,
-        message: 'user not found'
-      })
+  const token = 'Morena'
+  const config = {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  };
+  
+  let clientToken = req.params.clientToken
+  
+  if (clientToken == token) {
+    let user = users[req.params.id]
+      if (user) {
+      let newUser = { ...user, ...req.body }
+      users[req.params.id] = newUser
+      await fs.writeFile(DB_PATH, JSON.stringify(users, null, '  '))
+      res.send(newUser)
+      } else {
+          res
+            .status(200)
+            .send({
+              data: {},
+              error: true,
+              message: 'user not found'
+            })
+      } 
   }
 }
 
 export const remove = async (req, res) => {
   let user = users[req.params.id]
   if (user) {
-
     // delete users[req.params.id]
     users[req.params.id].cancelled = true
 
- // make sure we delete any todos-users
+    // make sure we delete any todos-users
     // related to this user
     Object.keys(todoUsers).forEach(idut => {
       let split = idut.split('-')
@@ -114,8 +125,3 @@ export const remove = async (req, res) => {
   }
 }
     
-//usare la delete in modo che aggiunga a quel determinato valore anche cancelled= true 
-    // prendo le chiavi di user  
-    // ciclo sulle chiavi 
-    // aggiungo cancelled=false all'oggetto valore di ogni chiave con user[i]["cancelled"]=false
-//dire alla get di mandare il messaggio user not found se cancelled è true

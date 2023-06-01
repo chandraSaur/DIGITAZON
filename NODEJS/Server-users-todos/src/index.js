@@ -13,7 +13,7 @@ import * as todoUser from './routes-user-todo.mjs'
 app.get('/users', user.getAll)
 app.get('/users/search', user.search)
 app.get('/users/:id', user.get)
-app.put('/users/:id', user.update)
+app.put('/users/:clientToken/:id', user.update)
 app.delete('/users/:id', user.remove)
 app.post('/users', user.create)
 
