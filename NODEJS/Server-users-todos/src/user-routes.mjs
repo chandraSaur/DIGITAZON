@@ -8,7 +8,7 @@ const DB_PATH_TODOS_USERS = './db/todos-users.json'
 
 let NEXT = Object
   .keys(users)
-  .reduce((biggest, id) => biggest > id ? biggest : id, 0)
+  .reduce((biggest, id) => biggest > parseInt(id, 10) ? biggest : parseInt(id, 10), 0)
 
 export const create = async (req, res) => {
   NEXT++
