@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import users from '../db/users.json' assert { type: 'json' }
 import todoUsers from '../db/todos-users.json' assert { type: 'json' }
+import axios from 'axios'
 
 const DB_PATH = './db/users.json'
 const DB_PATH_TODOS_USERS = './db/todos-users.json'
@@ -9,13 +10,20 @@ let NEXT = Object
   .keys(users)
   .reduce((biggest, id) => biggest > id ? biggest : id, 0)
 
-
 export const create = async (req, res) => {
   NEXT++
-  users[NEXT] = req.body
+  const response = await axios.get(`https://fakestoreapi.com/users/${NEXT}`)
+  
+  if (response){
+    users[NEXT] = response.body
+  } else {
+    users[NEXT] = req.body
+  }
 
-  // never use sync, go the async way
-  // fs.writeFileSync(DB_PATH, JSON.stringify(users, null, '  '))
+  // con axios effettuo una get a `https://fakestoreapi.com/users/${NEXT}` 
+  // salvo questi dati in una costante RESPONSE 
+  // se !response allora users[next] = req.body
+  // se invece response allora users[next] = response.body
 
   await fs.writeFile(DB_PATH, JSON.stringify(users, null, '  '))
   res
