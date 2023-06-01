@@ -68,22 +68,22 @@ export const search = (req, res) => {
 }
 
 export const update = async (req, res) => {
+
   const token = 'Morena'
   const config = {
     headers: {
       'Authorization': `Bearer ${token}`
     }
   };
-  
-  let clientToken = req.params.clientToken
-  
-  if (clientToken == token) {
+
+
+  if (res.getHeader('Authorization') == config.headers.Authorization){
     let user = users[req.params.id]
       if (user) {
-      let newUser = { ...user, ...req.body }
-      users[req.params.id] = newUser
-      await fs.writeFile(DB_PATH, JSON.stringify(users, null, '  '))
-      res.send(newUser)
+        let newUser = { ...user, ...req.body }
+        users[req.params.id] = newUser
+        await fs.writeFile(DB_PATH, JSON.stringify(users, null, '  '))
+        res.send(newUser)
       } else {
           res
             .status(200)
@@ -92,7 +92,7 @@ export const update = async (req, res) => {
               error: true,
               message: 'user not found'
             })
-      } 
+      }
   }
 }
 
