@@ -24,15 +24,10 @@ export const getSignup = (req, res) => {
 // create new user through form
 export const signup = (req, res) => {
 
-    const {username, password} = req.body
+    let idRandom = Date.now()
+    users[idRandom] = req.body
 
-    const newUser = {
-        id: Date.now(), // Generate a unique ID
-        username,
-        password
-      };
-
-    fs.writeFile(DB_PATH, JSON.stringify(newUser, null, '  '))
+    fs.writeFile(DB_PATH, JSON.stringify(users, null, '  '))
 
     res
         .status(201)
@@ -40,5 +35,3 @@ export const signup = (req, res) => {
             message: 'user created'
         })
 }  
-
-//sovrascrive l'utente già presente. SISTEMARE BUG. 
