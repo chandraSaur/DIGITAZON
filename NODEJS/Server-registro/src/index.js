@@ -1,8 +1,9 @@
 import express from "express";
 import * as students from "./studentsRoutes.mjs";
-
+import cors from 'cors'
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
