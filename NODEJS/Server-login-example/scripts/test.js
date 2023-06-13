@@ -20,7 +20,8 @@ async function login() {
     console.log(`Questo NON deve essere un errore: ${res.status}`)
 
     res = await axios.delete('http://localhost:3000/users/session')
-    console.log(res.status);
 
+    res = await axios.get('http://localhost:3000/users')
+    console.log(`Questo deve essere un errore: ${res.status}`)
 }
 login()
