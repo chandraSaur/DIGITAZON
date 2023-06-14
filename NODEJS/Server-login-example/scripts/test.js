@@ -21,6 +21,12 @@ async function login() {
 
     res = await axios.delete('http://localhost:3000/users/session')
 
+    // res = await axios.get('http://localhost:3000/users', {
+    //     headers: {
+    //         Cookie: cookie
+    //     }
+    // })
+
     res = await axios.get('http://localhost:3000/users')
     console.log(`Questo deve essere un errore: ${res.status}`)
 }

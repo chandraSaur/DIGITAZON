@@ -1,5 +1,8 @@
 import express from 'express'
 import session from 'express-session'
+import 'dotenv/config'  //process.env inizia a funzionare, non devo importare sempre il file .env
+import {runConnection, insertUser, fetchUsers } from './mongodb.mjs'
+
 const app = express()
 const port = 3000
 
@@ -31,6 +34,7 @@ function sessionChecked(req, res, next) {
   }
 }
 
+//runConnection()  //connessione all'istanza di MongoDB. Al db in Atlas.
 
 // la sessione è il range nel quale o si è autenticati
 // o autorizzati. 
@@ -39,8 +43,6 @@ function sessionChecked(req, res, next) {
 // /login
 // /logout
 // middleware per controllare permanenza utente nella sessione. 
-
-//to-do: prendere dati dal database
 
 // body: user e pass
 // sono uguali a ciò che ci aspettiamo
@@ -62,13 +64,21 @@ app.post('/users/session', (req, res) => {
   }
 })
 
+app.post('/users/signup', (req,res)=> {
+  let user = req.body
+  insertUser(user)
+  res
+      .status(201) //creato risorsa server side
+      .end()
+})
+
 // todo: prendere users da database. 
 // sarà la rotta da proteggere con AUTORIZZAZIONE.
 // serve una funzione che rappresenterà il middleware: controlleremo 
 // la sessione alla ricerca dell'utente
 
-app.get('/users', sessionChecked, (req, res) => {
-  res.send('users')
+app.get('/users', sessionChecked, async (req, res) => {
+  res.send(await fetchUsers())
 })
 
 app.delete('/users/session', (req, res) => {
