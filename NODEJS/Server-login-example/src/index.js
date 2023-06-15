@@ -1,7 +1,9 @@
 import express from 'express'
 import session from 'express-session'
+import axios from 'axios'
 import 'dotenv/config'  //process.env inizia a funzionare, non devo importare sempre il file .env
 import {runConnection, insertUser, fetchUsers } from './mongodb.mjs'
+axios.defaults.withCredentials = true;
 
 const app = express()
 const port = 3000
@@ -34,7 +36,7 @@ function sessionChecked(req, res, next) {
   }
 }
 
-//runConnection()  //connessione all'istanza di MongoDB. Al db in Atlas.
+runConnection()  //connessione all'istanza di MongoDB. Al db in Atlas.
 
 // la sessione è il range nel quale o si è autenticati
 // o autorizzati. 
@@ -81,13 +83,34 @@ app.get('/users', sessionChecked, async (req, res) => {
   res.send(await fetchUsers())
 })
 
-app.delete('/users/session', (req, res) => {
-  req.session.destroy(function err() {
-    res.send({
-      message: 'user has logged out'
-    }) 
+app.get('/logout', function (req, res, next) {
+  // logout logic
+
+  // clear the user from the session object and save.
+  // this will ensure that re-using the old session id
+  // does not have a logged in user
+  req.session.user = null
+  req.session.save(function (err) {
+    if (err) next(err)
+
+    // regenerate the session, which is good practice to help
+    // guard against forms of session fixation
+    req.session.regenerate(function (err) {
+      if (err) next(err)
+      // res.redirect('/')
+      res.status(200).end()
+    })
   })
+
 })
+
+// app.delete('/users/session', (req, res) => {
+//   req.session.destroy(function () {
+//     res.send({
+//       message: 'user has logged out'
+//     }) 
+//   })
+// })
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

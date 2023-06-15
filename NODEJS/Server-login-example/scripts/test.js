@@ -1,33 +1,21 @@
 import axios from 'axios'
+import {login, logout, signup} from './login.mjs'
+import {getUsers} from './getUsers.mjs'
 
 axios.defaults.validateStatus = status => true
 
-async function login() {
-    let res = await axios.post('http://localhost:3000/users/session', {
-        username: 'chandraSaur',
-        password: 'ciao123'
-    })
-    const cookie = res.headers['set-cookie'][0].split(';')[0]
+async function test() {
+    let cookie = await login()
+    console.log('Hai preso il cookie');
 
-    res = await axios.get('http://localhost:3000/users')
-    console.log(`Questo deve essere un errore: ${res.status}`)
+    let users = await getUsers(cookie)
+    console.log(users.length);
 
-    res = await axios.get('http://localhost:3000/users', {
-        headers: {
-            Cookie: cookie
-        }
-    })
-    console.log(`Questo NON deve essere un errore: ${res.status}`)
+    await logout()
+    console.log('Sloggato');
 
-    res = await axios.delete('http://localhost:3000/users/session')
+    users = await getUsers()
+    console.log(users);
 
-    // res = await axios.get('http://localhost:3000/users', {
-    //     headers: {
-    //         Cookie: cookie
-    //     }
-    // })
-
-    res = await axios.get('http://localhost:3000/users')
-    console.log(`Questo deve essere un errore: ${res.status}`)
 }
-login()
+test()
