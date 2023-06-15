@@ -79,9 +79,9 @@ export const update = async (req, res) => {
   if (req.get('Authorization') === config.headers.Authorization){
     let user = users[req.params.id]
       if (user) {
-        let newUser = { ...user, ...req.body }
-        users[req.params.id] = newUser
-        await fs.writeFile(DB_PATH, JSON.stringify(users, null, '  '))
+        let newUser = { ...user, ...req.body }  //prende le info preesistenti e aggiorna solo quelle specificate nella req.body. Le altre, se esistenti solo nello user e non nella req.body rimangono così come sono.
+        users[req.params.id] = newUser  //aggiorna quindi nella lista di tutti gli user quello con id considerato dall'aggiornamento da user a newUser. 
+        await fs.writeFile(DB_PATH, JSON.stringify(users, null, '  ')) //modulo fs che salva l'aggiornamento
         res.send(newUser)
       } else {
           res
