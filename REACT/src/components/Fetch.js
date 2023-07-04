@@ -6,23 +6,21 @@
 import {useState, useEffect} from "react"
 
 export function Fetch() {
-    const [products, setProducts] = useState ([]) //parte 1 che si occupa dello stato
-    useEffect(() => {   //parte 2 che recupera le info
+    const [products, setProducts] = useState ([])   //parte 1 che si occupa dello stato
+    useEffect(() => {                               //parte 2 che recupera le info
         async function fetchProducts() {
             let res = await fetch("https://fakestoreapi.com/products")
             let json = await res.json()
-            // console.log(res);
-            // console.log(json);
             setProducts(json)
         }
-        fetchProducts() //ritorna la PROMESSA
-    },[]) //cos'è QUESTO? --> righe sotto di spiegazione
+        fetchProducts()                             //ritorna la PROMESSA
+    },[])                                           //cos'è QUESTO? --> righe sotto di spiegazione
     
-    return ( //parte 3 che mostra all'utente
+    return (                                        //parte 3 che mostra all'utente
         <>
             <h1>Fetch</h1>
             {products.map((el) => 
-// si mette key perchè così ogni elemento ha il suo key univoco, non c'è più l'errore.
+                                                     // si mette key perchè così ogni elemento ha il suo key univoco, non c'è più l'errore.
                 (
                     <div key="el.id">  
                         <h2>{el.title}</h2>
