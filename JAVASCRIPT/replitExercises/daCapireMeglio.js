@@ -25,8 +25,8 @@ function countUndefinedKeys(falsey) {
 
   
   //spiegazione differenze chiamata
-  object[key]   // > in questo caso quando object è un array (come trasformato con Object.keys())
-  object.key    // > normale chiamata del valore corrispondente alla chiave in un oggetto. 
+  // object[key]   > in questo caso quando object è un array (come trasformato con Object.keys())
+  // object.key    > normale chiamata del valore corrispondente alla chiave in un oggetto. 
   
   // esempio di funzione con operatore ternario
   function count2(o) {
@@ -44,12 +44,12 @@ function countUndefinedKeys(falsey) {
     }, 0)
   }
 
+  // dobbiamo scorrere sull'array
+  // per ogni elemento
+  //   invocare fn passando l'initial e l'i-esimo
+  //   memorizzare il valore ottenuto in initial
+  // ritornare itial
   function reduce(arr, fn, accumulator) {
-    // dobbiamo scorrere sull'array
-    // per ogni elemento
-    //   invocare fn passando l'initial e l'i-esimo
-    //   memorizzare il valore ottenuto in initial
-    // ritornare itial
     for (let i = 0; i < arr.length; i++) {
       accumulator = fn(accumulator, arr[i])
     }

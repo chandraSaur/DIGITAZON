@@ -48,7 +48,7 @@ let res = els.filter(s => isUpperCase(s[0]))
 
 
 //3. ARRAY.REDUCE()
-// scorre per tutto l'array e ad ogni iterazione genera un nuovo risultato in base all'operazione passata dalla funzione passata
+// scorre per tutto l'array e ad ogni iterazione genera un nuovo risultato in base all'operazione passata dalla funzione
 // E' talmente potente che è possibile utilizzare lei al posto della map e della filter ottenendo lo stesso risultato. 
 
 [1,2,3,4].reduce((s , n) => s + n, 0) //risultato: 10
@@ -83,7 +83,122 @@ let res = els.filter(s => isUpperCase(s[0]))
     }, {})
 }
 
+//es 1 -> Turn an array of numbers into a total of all the numbers
+function total(arr) {
+    const res = arr.reduce((s,n) => s+n , 0)
+    return res
+} 
+console.log(total([1,2,3]));
 
+//es 2 -> Turn an array of numbers into a long string of all those numbers.
+function stringConcat(arr) {
+    const res = arr.reduce((s, n) => s + n.toString(), "")
+    return res
+}
+console.log(stringConcat([1,2,3])); 
+
+// es 3 -> Turn an array of voter objects into a count of how many people voted
+function totalVotes(arr) {
+    const res = arr.reduce((s, n) => n.voted ? s + 1 : s, 0)
+    return res
+}
+ 
+ let voters = [
+     {name:'Bob' , age: 30, voted: true},
+     {name:'Jake' , age: 32, voted: true},
+     {name:'Kate' , age: 25, voted: false},
+     {name:'Sam' , age: 20, voted: false},
+     {name:'Phil' , age: 21, voted: true},
+     {name:'Ed' , age: 55, voted: true},
+     {name:'Tami' , age: 54, voted:true},
+     {name: 'Mary', age: 31, voted: false},
+     {name: 'Becky', age: 43, voted: false},
+     {name: 'Joey', age: 41, voted: true},
+     {name: 'Jeff', age: 30, voted: true},
+     {name: 'Zack', age: 19, voted: false}
+ ];
+
+ console.log(totalVotes(voters));
+
+//es 4 -> Given an array of all your wishlist items, figure out how much it would cost to just buy everything at once
+
+function shoppingSpree(arr) {
+    const res = arr.reduce((s,n) => s + n.price, 0) 
+    return res
+ }
+ 
+ let wishlist = [
+     { title: "Tesla Model S", price: 90000 },
+     { title: "4 carat diamond ring", price: 45000 },
+     { title: "Fancy hacky Sack", price: 5 },
+     { title: "Gold fidgit spinner", price: 2000 },
+     { title: "A second Tesla Model S", price: 90000 }
+ ];
+ 
+ console.log(shoppingSpree(wishlist));
+
+//es 5 -> Given an array of arrays, flatten them into a single array
+function flatten(arr) {
+    const res = arr.reduce((s,n) => s.concat(n))
+    return res
+ }
+ 
+ let arrays = [
+     ["1", "2", "3"],
+     [true],
+     [4, 5, 6]
+ ];
+ 
+ console.log(flatten(arrays)); // ["1", "2", "3", true, 4, 5, 6];
+
+//es 6 -> Given an array of potential voters, return an object representing the results of the vote
+let voterss = [
+    {name:'Bob' , age: 30, voted: true}, //
+    {name:'Jake' , age: 32, voted: true}, //
+    {name:'Kate' , age: 25, voted: false},
+    {name:'Sam' , age: 20, voted: false},
+    {name:'Phil' , age: 21, voted: true},
+    {name:'Ed' , age:55, voted:true},
+    {name:'Tami' , age: 54, voted:true}, 
+    {name: 'Mary', age: 31, voted: false}, //
+    {name: 'Becky', age: 43, voted: false},
+    {name: 'Joey', age: 41, voted: true},
+    {name: 'Jeff', age: 30, voted: true}, //
+    {name: 'Zack', age: 19, voted: false}
+];
+
+function voterResults(arr) {
+   let res = {
+    numYoungVotes: 0,
+    numYoungPeople: 0,
+    numMidVotesPeople: 0,
+    numMidsPeople: 0,
+    numOldVotesPeople: 0,
+    numOldsPeople: 0
+   }
+   
+   let reducedArr = arr.reduce((result, voter) => {
+     if (voter.age >= 18 && voter.age <= 25){
+       res.numYoungPeople++
+          if (voter.voted==true) {
+             res.numYoungVotes++
+          }
+     } else if (voter.age > 25 && voter.age <= 35){
+         res.numMidsPeople++
+            if (voter.voted==true) {
+               res.numMidVotesPeople++
+            }
+      } else if (voter.age > 35 && voter.age <= 55){
+         res.numOldsPeople++
+            if (voter.voted==true) {
+               res.numOldVotesPeople++
+            }
+      }
+   })
+   return res
+}
+
+console.log(voterResults(voterss)); 
 
 //4. ARRAY.MAP()
 // Costruisce un nuovo array che trasforma l'i-esimo elemento in base alla funzione passata. 

@@ -254,12 +254,11 @@ console.log(isInString(allArrayWords,'Welcome to Jurassic Park','Park'));
 // scrivere una funzione chiamata larger che 
 // dati due numeri a e b che ritorna il maggiore
 
-//PSEUDOCODICE
-//
-//
-//
-//
-//
+function larger(a,b) {
+  let maxNum = Math.max(a,b)
+}
+
+console.log(larger(3,7));
 
 
 //1.12
@@ -268,11 +267,23 @@ console.log(isInString(allArrayWords,'Welcome to Jurassic Park','Park'));
 // false altrimenti
 
 //PSEUDOCODICE
-//
-//
-//
-//
-//
+// scrivere la funzione lessThan che prende in ingresso due numeri a e b
+// se a < b
+//    ritorna true
+// altrimenti
+//   ritorna false
+
+function lessThan(a, b) {
+  if (a < b) {
+    return true
+  } else {
+    return false
+  }
+}
+
+console.log(lessThan(4, 10));
+console.log(lessThan(10, 4));
+
 
 //1.13
 // scrivere una funzione chiamata stringConcat che 
@@ -282,11 +293,14 @@ console.log(isInString(allArrayWords,'Welcome to Jurassic Park','Park'));
 // ad esempio per "link" e "query" ritorna "link#query"
 
 //PSEUDOCODICE
-//
-//
-//
-//
-//
+// funzione stringCoat che prende in ingresso string1 e string2
+// return string1+#+string2
+
+function stringCoat(string1, string2) {
+  return string1 + '#' + string2
+}
+
+console.log(stringCoat("Hello", "World"));
 
 
 //1.14
@@ -295,10 +309,18 @@ console.log(isInString(allArrayWords,'Welcome to Jurassic Park','Park'));
 // ritorni la somma dei numeri contenuti nell'array
 
 //PSEUDOCODICE
-//
-//
-//
-//
-//
+// creo sum che prende ARR in ingresso
+// chiamo arrSum uguale alla reduce di arr
+// con result e n 
+// che somma result+n 
+// restituisce arrSum
+
+function sum(arr) {
+  let arrSum = arr.reduce((result,n) => result + n)
+  return arrSum
+}
+
+console.log(sum([1,5,7,3,9])); //25
+
 
 
